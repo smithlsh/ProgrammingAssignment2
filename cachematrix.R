@@ -1,9 +1,10 @@
 #
 # This function creates the CacheMatrix, a special matrix that cashes its
-# inverse.  Usage: aCacheMatrix<-makeCacheMatrix(aMatrix). Here aMatrix is
-# is an square R matrix and aCacheMatrix is the special CacheMatrix.
-# You should not directly call any of the Set routines.  The matrix aCacheMatrix
-# is the argument to function CacheSolve at the bottom of this file.
+# own inverse.  Usage: aCacheMatrix<-makeCacheMatrix(aMatrix). Here aMatrix is
+# is a square R matrix and aCacheMatrix is the special CacheMatrix returned
+# by the function makeCacheMatrix. You should not directly call any of 
+# the Set routines.  The matrix aCacheMatrix is the argument to function 
+# CacheSolve at the bottom of this file.
 #
 makeCacheMatrix <- function(myCacheMat=NULL) {
 #
