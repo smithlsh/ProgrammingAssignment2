@@ -47,9 +47,9 @@ makeCacheMatrix <- function(myCacheMat=NULL) {
 
 #
 # This function should be used to compute the inverse of the special
-# Cachematrix. It takes a special CacheMatrix as its argument. cacheSolve(aCacheMatrix). 
-# The matrix, aCacheMatrix, is a CacheMatrix which is the return value of makeCacheMatrix(aMatrix)
-# where aMatrix is an ordinary square R matrix.
+# Cachematrix and takes a special CacheMatrix as its argument. Usage: invMat<-cacheSolve(aCacheMatrix). 
+# The argument to this cacheSolve, aCacheMatrix, is a CacheMatrix and the return value of the function
+# cacheSolve,invMat, is the inverse of aCacheMatrix, but is an ordinary R matrix.
 #
 cacheSolve <- function(x, ...) {
         myCacheMatInverse <- x$GetCacheMatInverse()
