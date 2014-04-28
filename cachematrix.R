@@ -1,15 +1,85 @@
-## Put comments here that give an overall description of what your
-## functions do
+#
+# This function creates the CacheMatrix, a special matrix that cashes its
+# inverse.  Usage: cacheMatrix<-MakeCacheMatrix(yourMatrix).  You should not directly
+# call any of the Set routines.  The cacheMatrix is the argument to CacheSolve.
+#
+MakeCacheMatrix <- function(myCacheMat=NULL) {
+#
+# Some Rudimentary Error Checking.  It is not perfect!!!
+#
+        retNullMsg1<-"The CacheMatrix your are attempting to make is empty, null"
+        retNullMsg2<-"or does not exist. Try again."
+        retSqMsg1<-"The CacheMatrix you are making is not square or has "
+        retSqMsg2<-"a negative number of rows or columns."
+        if (is.na(myCacheMat) || is.null(myCacheMat)) {
+          cat(retNullMsg1)
+          cat(retNullMsg2)
+          return
+        }
 
-## Write a short comment describing this function
+        numCols=ncol(myCacheMat)
+        numRows=nrow(myCacheMat)
+         if ((numRows != numCols) || numRows<=0 || numCols<=0) {
+           cat(retSqMsg1)
+           cat(retSqMsg2)
+           return
+         }
+#
+        myCacheMatInverse <- NULL
+        SetCacheMat <- function(anotherCacheMat) {
+             myCacheMat <<- anotherMat
+             myCacheMatInverse <<- NULL
+        }
+        GetCacheMat <- function() myCacheMat
 
-makeCacheMatrix <- function(x = matrix()) {
+        SetCacheMatInverse <- function(matInverse) myCacheMatInverse <<-matInverse
 
+        GetCacheMatInverse <- function() myCacheMatInverse
+
+        list(SetCacheMat=SetCacheMat,GetCacheMat=GetCacheMat,
+        SetCacheMatInverse=SetCacheMatInverse,GetCacheMatInverse=GetCacheMatInverse)
 }
 
 
-## Write a short comment describing this function
 
-cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+#
+# This function creates the CacheMatrix, a special matrix that cashes its
+# inverse.  Usage: cacheMatrix<-MakeCacheMatrix(yourMatrix).  You should not directly
+# call any of the Set routines.  The cacheMatrix is the argument to CacheSolve.
+#
+MakeCacheMatrix <- function(myCacheMat=NULL) {
+#
+# Some Rudimentary Error Checking.  It is not perfect!!!
+#
+        retNullMsg1<-"The CacheMatrix your are attempting to make is empty, null"
+        retNullMsg2<-"or does not exist. Try again."
+        retSqMsg1<-"The CacheMatrix you are making is not square or has "
+        retSqMsg2<-"a negative number of rows or columns."
+        if (is.na(myCacheMat) || is.null(myCacheMat)) {
+          cat(retNullMsg1)
+          cat(retNullMsg2)
+          return
+        }
+
+        numCols=ncol(myCacheMat)
+        numRows=nrow(myCacheMat)
+         if ((numRows != numCols) || numRows<=0 || numCols<=0) {
+           cat(retSqMsg1)
+           cat(retSqMsg2)
+           return
+         }
+#
+        myCacheMatInverse <- NULL
+        SetCacheMat <- function(anotherCacheMat) {
+             myCacheMat <<- anotherMat
+             myCacheMatInverse <<- NULL
+        }
+        GetCacheMat <- function() myCacheMat
+
+        SetCacheMatInverse <- function(matInverse) myCacheMatInverse <<-matInverse
+
+        GetCacheMatInverse <- function() myCacheMatInverse
+
+        list(SetCacheMat=SetCacheMat,GetCacheMat=GetCacheMat,
+        SetCacheMatInverse=SetCacheMatInverse,GetCacheMatInverse=GetCacheMatInverse)
 }
