@@ -3,7 +3,8 @@
 # own inverse.  Usage: aCacheMatrix<-makeCacheMatrix(aMatrix). Here aMatrix is
 # is a square R matrix and aCacheMatrix is the special CacheMatrix returned
 # by the function makeCacheMatrix. You should not directly call any of 
-# the Set routines.  The matrix aCacheMatrix is the argument to function 
+# the Set routines in this function to compute the inverse.  
+# The matrix aCacheMatrix is the argument to function 
 # CacheSolve at the bottom of this file.
 #
 makeCacheMatrix <- function(myCacheMat=NULL) {
@@ -30,7 +31,7 @@ makeCacheMatrix <- function(myCacheMat=NULL) {
 #
         myCacheMatInverse <- NULL
         SetCacheMat <- function(anotherCacheMat) {
-             myCacheMat <<- anotherMat
+             myCacheMat <<- anotherCacheMat
              myCacheMatInverse <<- NULL
         }
         GetCacheMat <- function() myCacheMat
