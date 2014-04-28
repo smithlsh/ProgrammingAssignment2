@@ -48,8 +48,7 @@ makeCacheMatrix <- function(myCacheMat=NULL) {
 #
 # This function should be used to compute the inverse of a matrix. Usage: invMat<-cacheSolve(aCacheMatrix). 
 # The argument to the function cacheSolve is the return value of the function
-# makeCacheMatrix, defined above. The output of cacheSolve is the inverse of matrix of the input 
-# to this function and is an irdinary R matrix.
+# makeCacheMatrix, defined above. The output of the function cacheSolve is an ordinary R matrix.
 #
 cacheSolve <- function(x, ...) {
         myCacheMatInverse <- x$GetCacheMatInverse()
