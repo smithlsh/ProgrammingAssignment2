@@ -1,7 +1,9 @@
 #
 # This function creates the CacheMatrix, a special matrix that cashes its
-# inverse.  Usage: cacheMatrix<-MakeCacheMatrix(yourMatrix).  You should not directly
-# call any of the Set routines.  The cacheMatrix is the argument to CacheSolve.
+# inverse.  Usage: aCacheMatrix<-makeCacheMatrix(aMatrix). Here aMatrix is
+# is an square R matrix and aCacheMatrix is the special CacheMatrix.
+# You should not directly call any of the Set routines.  The matrix aCacheMatrix
+# is the argument to function CacheSolve at the bottom of this file.
 #
 makeCacheMatrix <- function(myCacheMat=NULL) {
 #
@@ -43,7 +45,9 @@ makeCacheMatrix <- function(myCacheMat=NULL) {
 
 #
 # This function should be used to compute the inverse of the special
-# Cachematrix. It takes a special CacheMatrix as its argument.
+# Cachematrix. It takes a special CacheMatrix as its argument. cacheSolve(aCacheMatrix). 
+# The matrix, aCacheMatrix, is a CacheMatrix which is the return value of makeCacheMatrix(aMatrix)
+# where aMatrix is an ordinary square R matrix.
 #
 cacheSolve <- function(x, ...) {
         myCacheMatInverse <- x$GetCacheMatInverse()
